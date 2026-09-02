@@ -1,0 +1,21 @@
+site_name: Tamburetei UnB
+site_description: Documentação Oficial do Tamburetei UnB — Métodos de Desenvolvimento de Software (MDS 2026/2 - FCTE/UnB)
+site_author: Grupo G9 — MDS UnB
+repo_name: OpenDevUnB/tamburetei-unb
+repo_url: https://github.com/OpenDevUnB
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - python
+    - yaml
+    - bash
+    - sql
+    - json
+
+nav:
+  - Início: index.md
+  - Arquitetura & Decisões: arquitetura.md
+  - Regras de Negócio & LGPD: regras_negocio.md
+  - Guia de Desenvolvimento: desenvolvimento.md
