@@ -1,6 +1,6 @@
-from pydantic_settings import BaseSettings
-from typing import List
 import os
+from typing import List
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Tamburetei UnB API"
@@ -9,8 +9,8 @@ class Settings(BaseSettings):
     
     # Banco de Dados
     POSTGRES_SERVER: str = os.getenv("POSTGRES_SERVER", "db")
-    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "postgres")
-    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "postgres")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "tamburetei_dev")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "tamburetei_secret")
     POSTGRES_DB: str = os.getenv("POSTGRES_DB", "tamburetei_db")
     POSTGRES_PORT: str = os.getenv("POSTGRES_PORT", "5432")
     
@@ -28,8 +28,8 @@ class Settings(BaseSettings):
         "*"
     ]
     
-    # Anonimização / LGPD (K-anonymity threshold)
-    K_ANONYMITY_THRESHOLD: int = 5
+    # Limiar para baixa amostragem LGPD / DPO (< 5 alunos)
+    AMOSTRAGEM_MINIMA_LGPD: int = 5
 
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> str:
